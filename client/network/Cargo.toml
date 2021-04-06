@@ -7,12 +7,12 @@ edition = "2018"
 
 [dependencies]
 # Substrate deps
-sp-blockchain = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-consensus = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-runtime = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-api = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-core = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sc-client-api = { git = "https://github.com/paritytech/substrate", branch = "master" }
+sp-blockchain = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-consensus = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-runtime = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-api = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-core = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sc-client-api = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
 
 # Polkadot deps
 polkadot-primitives = { git = "https://github.com/paritytech/polkadot", branch = "master" }
@@ -41,11 +41,11 @@ polkadot-test-client = { git = "https://github.com/paritytech/polkadot", branch 
 polkadot-test-service = { git = "https://github.com/paritytech/polkadot", branch = "master" }
 
 # substrate deps
-sc-client-api = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-core = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-keyring = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-keystore = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-consensus = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sc-cli = { git = "https://github.com/paritytech/substrate", branch = "master" }
-substrate-test-utils = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sc-service = { git = "https://github.com/paritytech/substrate", branch = "master" }
+sc-client-api = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-core = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-keyring = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-keystore = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-consensus = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sc-cli = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+substrate-test-utils = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sc-service = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }

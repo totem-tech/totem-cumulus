@@ -11,16 +11,16 @@ cumulus-client-collator = { path = "../collator" }
 cumulus-primitives-core = { path = "../../primitives/core" }
 
 # Substrate dependencies
-sc-chain-spec = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sc-client-api = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sc-service = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sc-telemetry = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sc-tracing = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-consensus = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-runtime = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-api = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-core = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-blockchain = { git = "https://github.com/paritytech/substrate", branch = "master" }
+sc-chain-spec = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sc-client-api = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sc-service = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sc-telemetry = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sc-tracing = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-consensus = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-runtime = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-api = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-core = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-blockchain = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
 
 # Polkadot dependencies
 polkadot-primitives = { git = "https://github.com/paritytech/polkadot", branch = "master" }

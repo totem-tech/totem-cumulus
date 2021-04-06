@@ -17,7 +17,20 @@ members = [
 	"test/client",
 	"test/service",
 	"test/relay-sproof-builder",
+	"rococo-parachains/totem/accounting",
+	"rococo-parachains/totem/archive",
+	"rococo-parachains/totem/bonsai",
+	"rococo-parachains/totem/orders",
+	"rococo-parachains/totem/prefunding",
+	"rococo-parachains/totem/teams",
+	"rococo-parachains/totem/timekeeping",
+	"rococo-parachains/totem/common",
+	#"rococo-parachains/pallets/balances",
 ]
 
 [profile.release]
 panic = "unwind"
+
+[patch.'https://gitlab.com/totem-tech/totem-lego']
+pallet-balances = { path = "./rococo-parachains/pallets/balances" }
+#pallet-balances = { path = "." }

@@ -14,14 +14,12 @@
 // You should have received a copy of the GNU General Public License
 // along with Cumulus.  If not, see <http://www.gnu.org/licenses/>.
 
-use sc_client_api::{
-	Backend, BlockBackend, BlockImportNotification, BlockchainEvents, Finalizer, UsageProvider,
-};
+use sc_client_api::{Backend, BlockBackend, BlockImportNotification, BlockchainEvents, Finalizer, UsageProvider};
 use sp_api::ProvideRuntimeApi;
 use sp_blockchain::{Error as ClientError, Result as ClientResult};
 use sp_consensus::{
-	BlockImport, BlockImportParams, BlockOrigin, BlockStatus, Error as ConsensusError,
-	ForkChoiceStrategy, SelectChain as SelectChainT,
+	BlockImport, BlockImportParams, BlockOrigin, BlockStatus, Error as ConsensusError, ForkChoiceStrategy,
+	SelectChain as SelectChainT,
 };
 use sp_runtime::{
 	generic::BlockId,
@@ -29,8 +27,7 @@ use sp_runtime::{
 };
 
 use polkadot_primitives::v1::{
-	Block as PBlock, Hash as PHash, Id as ParaId, OccupiedCoreAssumption, ParachainHost,
-	PersistedValidationData,
+	Block as PBlock, Hash as PHash, Id as ParaId, OccupiedCoreAssumption, ParachainHost, PersistedValidationData,
 };
 
 use codec::Decode;
@@ -62,22 +59,14 @@ pub trait RelaychainClient: Clone + 'static {
 	fn finalized_heads(&self, para_id: ParaId) -> ClientResult<Self::HeadStream>;
 
 	/// Returns the parachain head for the given `para_id` at the given block id.
-	fn parachain_head_at(
-		&self,
-		at: &BlockId<PBlock>,
-		para_id: ParaId,
-	) -> ClientResult<Option<Vec<u8>>>;
+	fn parachain_head_at(&self, at: &BlockId<PBlock>, para_id: ParaId) -> ClientResult<Option<Vec<u8>>>;
 }
 
 /// Follow the finalized head of the given parachain.
 ///
 /// For every finalized block of the relay chain, it will get the included parachain header
 /// corresponding to `para_id` and will finalize it in the parachain.
-async fn follow_finalized_head<P, Block, B, R>(
-	para_id: ParaId,
-	parachain: Arc<P>,
-	relay_chain: R,
-) -> ClientResult<()>
+async fn follow_finalized_head<P, Block, B, R>(para_id: ParaId, parachain: Arc<P>, relay_chain: R) -> ClientResult<()>
 where
 	Block: BlockT,
 	P: Finalizer<Block, B> + UsageProvider<Block>,
@@ -147,22 +136,12 @@ pub async fn run_parachain_consensus<P, R, Block, B>(
 ) -> ClientResult<()>
 where
 	Block: BlockT,
-	P: Finalizer<Block, B>
-		+ UsageProvider<Block>
-		+ Send
-		+ Sync
-		+ BlockBackend<Block>
-		+ BlockchainEvents<Block>,
+	P: Finalizer<Block, B> + UsageProvider<Block> + Send + Sync + BlockBackend<Block> + BlockchainEvents<Block>,
 	for<'a> &'a P: BlockImport<Block>,
 	R: RelaychainClient,
 	B: Backend<Block>,
 {
-	let follow_new_best = follow_new_best(
-		para_id,
-		parachain.clone(),
-		relay_chain.clone(),
-		announce_block,
-	);
+	let follow_new_best = follow_new_best(para_id, parachain.clone(), relay_chain.clone(), announce_block);
 	let follow_finalized_head = follow_finalized_head(para_id, parachain, relay_chain);
 	select! {
 		r = follow_new_best.fuse() => r,
@@ -179,12 +158,7 @@ async fn follow_new_best<P, R, Block, B>(
 ) -> ClientResult<()>
 where
 	Block: BlockT,
-	P: Finalizer<Block, B>
-		+ UsageProvider<Block>
-		+ Send
-		+ Sync
-		+ BlockBackend<Block>
-		+ BlockchainEvents<Block>,
+	P: Finalizer<Block, B> + UsageProvider<Block> + Send + Sync + BlockBackend<Block> + BlockchainEvents<Block>,
 	for<'a> &'a P: BlockImport<Block>,
 	R: RelaychainClient,
 	B: Backend<Block>,
@@ -248,7 +222,7 @@ async fn handle_new_block_imported<Block, P>(
 {
 	// HACK
 	//
-	// Remove after https://github.com/paritytech/substrate/pull/8052 or similar is merged
+	// Remove after https://gitlab.com/totem-tech/totem-lego/pull/8052 or similar is merged
 	if notification.origin != BlockOrigin::Own {
 		announce_block(notification.hash, None);
 	}
@@ -276,9 +250,7 @@ async fn handle_new_block_imported<Block, P>(
 	match parachain.block_status(&BlockId::Hash(unset_hash)) {
 		Ok(BlockStatus::InChainWithState) => {
 			drop(unset_best_header);
-			let unset_best_header = unset_best_header_opt
-				.take()
-				.expect("We checked above that the value is set; qed");
+			let unset_best_header = unset_best_header_opt.take().expect("We checked above that the value is set; qed");
 
 			import_block_as_new_best(unset_hash, unset_best_header, parachain).await;
 		}
@@ -370,10 +342,7 @@ where
 	block_import_params.fork_choice = Some(ForkChoiceStrategy::Custom(true));
 	block_import_params.import_existing = true;
 
-	if let Err(err) = (&*parachain)
-		.import_block(block_import_params, Default::default())
-		.await
-	{
+	if let Err(err) = (&*parachain).import_block(block_import_params, Default::default()).await {
 		tracing::warn!(
 			target: "cumulus-consensus",
 			block_hash = ?hash,
@@ -397,10 +366,7 @@ where
 
 		let s = self.import_notification_stream().filter_map(move |n| {
 			future::ready(if n.is_new_best {
-				polkadot
-					.parachain_head_at(&BlockId::hash(n.hash), para_id)
-					.ok()
-					.and_then(|h| h)
+				polkadot.parachain_head_at(&BlockId::hash(n.hash), para_id).ok().and_then(|h| h)
 			} else {
 				None
 			})
@@ -413,22 +379,13 @@ where
 		let polkadot = self.clone();
 
 		let s = self.finality_notification_stream().filter_map(move |n| {
-			future::ready(
-				polkadot
-					.parachain_head_at(&BlockId::hash(n.hash), para_id)
-					.ok()
-					.and_then(|h| h),
-			)
+			future::ready(polkadot.parachain_head_at(&BlockId::hash(n.hash), para_id).ok().and_then(|h| h))
 		});
 
 		Ok(Box::new(s))
 	}
 
-	fn parachain_head_at(
-		&self,
-		at: &BlockId<PBlock>,
-		para_id: ParaId,
-	) -> ClientResult<Option<Vec<u8>>> {
+	fn parachain_head_at(&self, at: &BlockId<PBlock>, para_id: ParaId) -> ClientResult<Option<Vec<u8>>> {
 		self.runtime_api()
 			.persisted_validation_data(at, para_id, OccupiedCoreAssumption::TimedOut)
 			.map(|s| s.map(|s| s.parent_head.0))
@@ -503,12 +460,9 @@ where
 			.map_err(|e| ConsensusError::ChainLookup(e.to_string()))?;
 
 		match para_best_chain {
-			Some(best) => Decode::decode(&mut &best[..]).map_err(|e| {
-				ConsensusError::ChainLookup(format!("Error decoding parachain head: {}", e))
-			}),
-			None => Err(ConsensusError::ChainLookup(
-				"Could not find parachain head for best relay chain!".into(),
-			)),
+			Some(best) => Decode::decode(&mut &best[..])
+				.map_err(|e| ConsensusError::ChainLookup(format!("Error decoding parachain head: {}", e))),
+			None => Err(ConsensusError::ChainLookup("Could not find parachain head for best relay chain!".into())),
 		}
 	}
 }
@@ -555,9 +509,7 @@ impl<B: BlockT> ParachainConsensus<B> for Box<dyn ParachainConsensus<B> + Send +
 		relay_parent: PHash,
 		validation_data: &PersistedValidationData,
 	) -> Option<ParachainCandidate<B>> {
-		(*self)
-			.produce_candidate(parent, relay_parent, validation_data)
-			.await
+		(*self).produce_candidate(parent, relay_parent, validation_data).await
 	}
 }
 
@@ -613,34 +565,18 @@ mod tests {
 
 		type HeadStream = Box<dyn Stream<Item = Vec<u8>> + Send + Unpin>;
 		fn new_best_heads(&self, _: ParaId) -> ClientResult<Self::HeadStream> {
-			let stream = self
-				.inner
-				.lock()
-				.unwrap()
-				.new_best_heads
-				.take()
-				.expect("Should only be called once");
+			let stream = self.inner.lock().unwrap().new_best_heads.take().expect("Should only be called once");
 
 			Ok(Box::new(stream.map(|v| v.encode())))
 		}
 
 		fn finalized_heads(&self, _: ParaId) -> ClientResult<Self::HeadStream> {
-			let stream = self
-				.inner
-				.lock()
-				.unwrap()
-				.finalized_heads
-				.take()
-				.expect("Should only be called once");
+			let stream = self.inner.lock().unwrap().finalized_heads.take().expect("Should only be called once");
 
 			Ok(Box::new(stream.map(|v| v.encode())))
 		}
 
-		fn parachain_head_at(
-			&self,
-			_: &BlockId<PBlock>,
-			_: ParaId,
-		) -> ClientResult<Option<Vec<u8>>> {
+		fn parachain_head_at(&self, _: &BlockId<PBlock>, _: ParaId) -> ClientResult<Option<Vec<u8>>> {
 			unimplemented!("Not required for tests")
 		}
 	}
@@ -669,20 +605,12 @@ mod tests {
 
 		let block = build_and_import_block(client.clone());
 		let relay_chain = Relaychain::new();
-		let new_best_heads_sender = relay_chain
-			.inner
-			.lock()
-			.unwrap()
-			.new_best_heads_sender
-			.clone();
+		let new_best_heads_sender = relay_chain.inner.lock().unwrap().new_best_heads_sender.clone();
 
-		let consensus =
-			run_parachain_consensus(100.into(), client.clone(), relay_chain, Arc::new(|_, _| {}));
+		let consensus = run_parachain_consensus(100.into(), client.clone(), relay_chain, Arc::new(|_, _| {}));
 
 		let work = async move {
-			new_best_heads_sender
-				.unbounded_send(block.header().clone())
-				.unwrap();
+			new_best_heads_sender.unbounded_send(block.header().clone()).unwrap();
 			loop {
 				Delay::new(Duration::from_millis(100)).await;
 				if block.hash() == client.usage_info().chain.best_hash {
@@ -710,20 +638,12 @@ mod tests {
 
 		let block = build_and_import_block(client.clone());
 		let relay_chain = Relaychain::new();
-		let finalized_sender = relay_chain
-			.inner
-			.lock()
-			.unwrap()
-			.finalized_heads_sender
-			.clone();
+		let finalized_sender = relay_chain.inner.lock().unwrap().finalized_heads_sender.clone();
 
-		let consensus =
-			run_parachain_consensus(100.into(), client.clone(), relay_chain, Arc::new(|_, _| {}));
+		let consensus = run_parachain_consensus(100.into(), client.clone(), relay_chain, Arc::new(|_, _| {}));
 
 		let work = async move {
-			finalized_sender
-				.unbounded_send(block.header().clone())
-				.unwrap();
+			finalized_sender.unbounded_send(block.header().clone()).unwrap();
 			loop {
 				Delay::new(Duration::from_millis(100)).await;
 				if block.hash() == client.usage_info().chain.finalized_hash {
@@ -752,37 +672,23 @@ mod tests {
 		let block = build_and_import_block(client.clone());
 
 		let unknown_block = {
-			let block_builder = client.init_block_builder_at(
-				&BlockId::Hash(block.hash()),
-				None,
-				Default::default(),
-			);
+			let block_builder = client.init_block_builder_at(&BlockId::Hash(block.hash()), None, Default::default());
 			block_builder.build().unwrap().block
 		};
 
 		let relay_chain = Relaychain::new();
-		let finalized_sender = relay_chain
-			.inner
-			.lock()
-			.unwrap()
-			.finalized_heads_sender
-			.clone();
+		let finalized_sender = relay_chain.inner.lock().unwrap().finalized_heads_sender.clone();
 
-		let consensus =
-			run_parachain_consensus(100.into(), client.clone(), relay_chain, Arc::new(|_, _| {}));
+		let consensus = run_parachain_consensus(100.into(), client.clone(), relay_chain, Arc::new(|_, _| {}));
 
 		let work = async move {
 			for _ in 0..3usize {
-				finalized_sender
-					.unbounded_send(unknown_block.header().clone())
-					.unwrap();
+				finalized_sender.unbounded_send(unknown_block.header().clone()).unwrap();
 
 				Delay::new(Duration::from_millis(100)).await;
 			}
 
-			finalized_sender
-				.unbounded_send(block.header().clone())
-				.unwrap();
+			finalized_sender.unbounded_send(block.header().clone()).unwrap();
 			loop {
 				Delay::new(Duration::from_millis(100)).await;
 				if block.hash() == client.usage_info().chain.finalized_hash {
@@ -814,29 +720,17 @@ mod tests {
 		let block = build_and_import_block(client.clone());
 
 		let unknown_block = {
-			let block_builder = client.init_block_builder_at(
-				&BlockId::Hash(block.hash()),
-				None,
-				Default::default(),
-			);
+			let block_builder = client.init_block_builder_at(&BlockId::Hash(block.hash()), None, Default::default());
 			block_builder.build().unwrap().block
 		};
 
 		let relay_chain = Relaychain::new();
-		let new_best_heads_sender = relay_chain
-			.inner
-			.lock()
-			.unwrap()
-			.new_best_heads_sender
-			.clone();
+		let new_best_heads_sender = relay_chain.inner.lock().unwrap().new_best_heads_sender.clone();
 
-		let consensus =
-			run_parachain_consensus(100.into(), client.clone(), relay_chain, Arc::new(|_, _| {}));
+		let consensus = run_parachain_consensus(100.into(), client.clone(), relay_chain, Arc::new(|_, _| {}));
 
 		let work = async move {
-			new_best_heads_sender
-				.unbounded_send(block.header().clone())
-				.unwrap();
+			new_best_heads_sender.unbounded_send(block.header().clone()).unwrap();
 
 			loop {
 				Delay::new(Duration::from_millis(100)).await;
@@ -846,9 +740,7 @@ mod tests {
 			}
 
 			// Announce the unknown block
-			new_best_heads_sender
-				.unbounded_send(unknown_block.header().clone())
-				.unwrap();
+			new_best_heads_sender.unbounded_send(unknown_block.header().clone()).unwrap();
 
 			// Do some iterations. As this is a local task executor, only one task can run at a time.
 			// Meaning that it should already have processed the unknown block.
@@ -863,10 +755,7 @@ mod tests {
 			block_import_params.body = Some(body);
 
 			// Now import the unkown block to make it "known"
-			client
-				.import_block(block_import_params, Default::default())
-				.await
-				.unwrap();
+			client.import_block(block_import_params, Default::default()).await.unwrap();
 
 			loop {
 				Delay::new(Duration::from_millis(100)).await;

@@ -5,22 +5,22 @@ authors = ["Parity Technologies <admin@parity.io>"]
 edition = "2018"
 
 [dependencies]
-sc-service = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sc-consensus = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sc-block-builder = { git = "https://github.com/paritytech/substrate", branch = "master" }
-substrate-test-client = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-runtime = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-core = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-api = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-keyring = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-test-primitives = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-blockchain = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-inherents = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-timestamp = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-state-machine = { git = "https://github.com/paritytech/substrate", branch = "master" }
-frame-system = { git = "https://github.com/paritytech/substrate", branch = "master" }
-pallet-transaction-payment = { git = "https://github.com/paritytech/substrate", branch = "master" }
-pallet-balances = { git = "https://github.com/paritytech/substrate", branch = "master" }
+sc-service = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sc-consensus = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sc-block-builder = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+substrate-test-client = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-runtime = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-core = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-api = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-keyring = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-test-primitives = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-blockchain = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-inherents = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-timestamp = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+sp-state-machine = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+frame-system = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+pallet-transaction-payment = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+pallet-balances = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
 
 # Cumulus deps
 cumulus-test-runtime = { path = "../runtime" }

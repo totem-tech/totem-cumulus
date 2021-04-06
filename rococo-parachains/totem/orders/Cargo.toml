@@ -1,0 +1,39 @@
+[package]
+authors = ["Totem Live Accounting <chris.dcosta@totemaccounting.com>"]
+description = 'Totem Orders Module'
+edition = '2018'
+homepage = 'https://totemaccounting.com'
+license = 'GNU'
+name = 'pallet-orders'
+version = '1.0.0'
+# repository = 'https://github.com/substrate-developer-hub/substrate-pallet-template/'
+
+[dependencies]
+codec = { package = "parity-scale-codec", version = "2.0.0", default-features = false }
+totem-common = { path = "../common" }
+# primitives
+sp-runtime = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false }
+sp-std = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false }
+# frame
+frame-support = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false }
+frame-system = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false }
+pallet-balances = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false }
+# totem frame
+pallet-accounting = { path = "../accounting", default-features = false }
+
+[dev-dependencies]
+#sr-io = { package = "sp-io", git = "https://gitlab.com/totem-tech/totem-lego" }
+#sp-primitives = { package = "sp-core", git = "https://gitlab.com/totem-tech/totem-lego" }
+
+[features]
+default = ["std"]
+std = [
+    "codec/std",
+    "totem-common/std",
+    "sp-runtime/std",
+    "sp-std/std",
+	"frame-support/std",
+	"frame-system/std",
+    "pallet-balances/std",
+    "pallet-accounting/std",
+]
