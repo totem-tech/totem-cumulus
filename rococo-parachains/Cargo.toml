@@ -22,11 +22,11 @@ serde = { version = "1.0.101", features = ["derive"] }
 hex-literal = "0.2.1"
 
 # Parachain dependencies
-parachain-runtime = { package = "cumulus-test-parachain-runtime", path = "runtime" }
+parachain-runtime = { package = "cumulus-totem-parachain-runtime", path = "runtime" }
 rococo-parachain-primitives = { path = "primitives" }
 
 # Substrate dependencies
-sp-runtime = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+sp-runtime = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
 sp-io = { git = "https://github.com/paritytech/substrate", branch = "master" }
 sp-core = { git = "https://github.com/paritytech/substrate", branch = "master" }
 sp-inherents = { git = "https://github.com/paritytech/substrate", branch = "master" }

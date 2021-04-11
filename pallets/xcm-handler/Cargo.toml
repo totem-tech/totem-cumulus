@@ -10,8 +10,8 @@ codec = { package = "parity-scale-codec", version = "2.0.0", features = [ "deriv
 log = { version = "0.4.14", default-features = false }
 
 # Substrate Dependencies
-sp-std = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
-frame-support = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+sp-std = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
+frame-support = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
 frame-system = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
 
 # Polkadot Dependencies

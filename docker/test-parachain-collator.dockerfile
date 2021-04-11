@@ -50,9 +50,9 @@ HEALTHCHECK --interval=300s --timeout=75s --start-period=30s --retries=3 \
 # outputs, which can then be moved into a volume at runtime
 FROM debian:buster-slim as runtime
 COPY --from=builder \
-    /paritytech/cumulus/target/release/wbuild/cumulus-test-parachain-runtime/cumulus_test_parachain_runtime.compact.wasm \
+    /paritytech/cumulus/target/release/wbuild/cumulus-totem-parachain-runtime/cumulus_totem_parachain_runtime.compact.wasm \
     /var/opt/
-CMD ["cp", "-v", "/var/opt/cumulus_test_parachain_runtime.compact.wasm", "/runtime/"]
+CMD ["cp", "-v", "/var/opt/cumulus_totem_parachain_runtime.compact.wasm", "/runtime/"]
 
 FROM debian:buster-slim
 COPY --from=builder \

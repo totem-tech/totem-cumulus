@@ -9,7 +9,7 @@ sc-service = { git = "https://github.com/paritytech/substrate", branch = "master
 sc-consensus = { git = "https://github.com/paritytech/substrate", branch = "master" }
 sc-block-builder = { git = "https://github.com/paritytech/substrate", branch = "master" }
 substrate-test-client = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-runtime = { git = "https://github.com/paritytech/substrate", branch = "master" }
+sp-runtime = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
 sp-core = { git = "https://github.com/paritytech/substrate", branch = "master" }
 sp-api = { git = "https://github.com/paritytech/substrate", branch = "master" }
 sp-keyring = { git = "https://github.com/paritytech/substrate", branch = "master" }
@@ -19,8 +19,8 @@ sp-inherents = { git = "https://github.com/paritytech/substrate", branch = "mast
 sp-timestamp = { git = "https://github.com/paritytech/substrate", branch = "master" }
 sp-state-machine = { git = "https://github.com/paritytech/substrate", branch = "master" }
 frame-system = { git = "https://github.com/paritytech/substrate", branch = "master" }
-pallet-transaction-payment = { git = "https://github.com/paritytech/substrate", branch = "master" }
-pallet-balances = { git = "https://github.com/paritytech/substrate", branch = "master" }
+pallet-transaction-payment = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
+pallet-balances = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
 
 # Cumulus deps
 cumulus-test-runtime = { path = "../runtime" }

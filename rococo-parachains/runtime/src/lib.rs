@@ -36,6 +36,9 @@ use sp_std::prelude::*;
 use sp_version::NativeVersion;
 use sp_version::RuntimeVersion;
 
+/// Totem helper to handle some numeric conversions.
+mod conversion_handler;
+
 // A few exports that help ease life for downstream crates.
 pub use frame_support::{
 	construct_runtime, parameter_types,
@@ -74,8 +77,8 @@ impl_opaque_keys! {
 
 /// This runtime version.
 pub const VERSION: RuntimeVersion = RuntimeVersion {
-	spec_name: create_runtime_str!("cumulus-test-parachain"),
-	impl_name: create_runtime_str!("cumulus-test-parachain"),
+	spec_name: create_runtime_str!("cumulus-totem-parachain"),
+	impl_name: create_runtime_str!("cumulus-totem-parachain"),
 	authoring_version: 1,
 	spec_version: 3,
 	impl_version: 1,
@@ -216,6 +219,7 @@ impl pallet_balances::Config for Runtime {
 	type AccountStore = System;
 	type WeightInfo = ();
 	type MaxLocks = MaxLocks;
+	type Accounting = pallet_accounting::Pallet<Self>;
 }
 
 impl pallet_transaction_payment::Config for Runtime {
@@ -294,6 +298,47 @@ impl cumulus_pallet_xcm_handler::Config for Runtime {
 	type AccountIdConverter = LocationConverter;
 }
 
+impl pallet_accounting::Config for Runtime {
+	type Event = Event;
+	type AccountingConversions = conversion_handler::ConversionHandler;
+}
+
+impl pallet_archive::Config for Runtime {
+	type Event = Event;
+	type Timekeeping = pallet_timekeeping::Pallet<Self>;
+}
+
+impl pallet_bonsai::Config for Runtime {
+	type Event = Event;
+	type Orders = pallet_orders::Pallet<Self>;
+	type Projects = pallet_teams::Pallet<Self>;
+	type Timekeeping = pallet_timekeeping::Pallet<Self>;
+	type BonsaiConversions = conversion_handler::ConversionHandler;
+}
+
+impl pallet_orders::Config for Runtime {
+	type Event = Event;
+	type Accounting = pallet_accounting::Pallet<Self>;
+	type Prefunding = pallet_prefunding::Pallet<Self>;
+	type OrderConversions = conversion_handler::ConversionHandler;
+	type Bonsai = pallet_bonsai::Pallet<Self>;
+}
+
+impl pallet_prefunding::Config for Runtime {
+	type Event = Event;
+	type Currency = pallet_balances::Pallet<Self>;
+	type PrefundingConversions = conversion_handler::ConversionHandler;
+}
+
+impl pallet_teams::Config for Runtime {
+	type Event = Event;
+}
+
+impl pallet_timekeeping::Config for Runtime {
+	type Event = Event;
+	type Projects = Teams;
+}
+
 construct_runtime! {
 	pub enum Runtime where
 		Block = Block,
@@ -301,6 +346,15 @@ construct_runtime! {
 		UncheckedExtrinsic = UncheckedExtrinsic,
 	{
 		System: frame_system::{Pallet, Call, Storage, Config, Event<T>},
+		// Totem
+		Accounting: pallet_accounting::{Pallet, Call, Storage, Event<T>},
+		Archive: pallet_archive::{Pallet, Call, Storage, Event<T>},
+		Bonsai: pallet_bonsai::{Pallet, Call, Storage, Event<T>},
+		Orders: pallet_orders::{Pallet, Call, Storage, Event<T>},
+		Prefunding: pallet_prefunding::{Pallet, Call, Storage, Event<T>},
+		Teams: pallet_teams::{Pallet, Call, Storage, Event<T>},
+		Timekeeping: pallet_timekeeping::{Pallet, Call, Storage, Event<T>},
+		//
 		Timestamp: pallet_timestamp::{Pallet, Call, Storage, Inherent},
 		Balances: pallet_balances::{Pallet, Call, Storage, Config<T>, Event<T>},
 		Sudo: pallet_sudo::{Pallet, Call, Storage, Config<T>, Event<T>},

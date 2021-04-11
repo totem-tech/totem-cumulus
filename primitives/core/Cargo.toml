@@ -6,9 +6,9 @@ edition = "2018"
 
 [dependencies]
 # Substrate dependencies
-sp-std = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
-sp-runtime = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
-sp-trie = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+sp-std = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
+sp-runtime = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
+sp-trie = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
 
 # Polkadot dependencies
 polkadot-parachain = { git = "https://github.com/paritytech/polkadot", default-features = false, branch = "master" }
