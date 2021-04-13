@@ -46,7 +46,8 @@ polkadot-overseer = { git = "https://github.com/paritytech/polkadot", branch = "
 cumulus-client-consensus-relay-chain = { path = "../../client/consensus/relay-chain" }
 cumulus-client-network = { path = "../../client/network" }
 cumulus-client-service = { path = "../../client/service" }
-cumulus-primitives-core = { path = "../../primitives/core" }
+# cumulus-primitives-core = { path = "../../primitives/core" }
+cumulus-primitives-core = { path = "../../primitives/core", default-features = false }
 cumulus-test-runtime = { path = "../runtime" }
 
 # RPC related dependencies
@@ -59,3 +60,9 @@ tokio = { version = "0.2.21", features = ["macros"] }
 # Substrate dependencies
 substrate-test-utils = { git = "https://github.com/paritytech/substrate", branch = "master" }
 sc-cli = { git = "https://github.com/paritytech/substrate", branch = "master" }
+
+[features]
+default = [ "std" ]
+std = [
+	"cumulus-primitives-core/std",
+]

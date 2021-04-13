@@ -8,7 +8,8 @@ edition = "2018"
 # Substrate dependencies
 sp-runtime = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "master" }
 sp-core = { git = "https://github.com/paritytech/substrate", branch = "master" }
-sp-io = { git = "https://github.com/paritytech/substrate", branch = "master" }
+# sp-io = { git = "https://github.com/paritytech/substrate", branch = "master" }
+sp-io = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
 sp-consensus = { git = "https://github.com/paritytech/substrate", branch = "master" }
 sp-state-machine = { git = "https://github.com/paritytech/substrate", branch = "master" }
 sc-client-api = { git = "https://github.com/paritytech/substrate", branch = "master" }
@@ -22,7 +23,8 @@ polkadot-node-subsystem = { git = "https://github.com/paritytech/polkadot", bran
 # Cumulus dependencies
 cumulus-client-network = { path = "../network" }
 cumulus-client-consensus-common = { path = "../consensus/common" }
-cumulus-primitives-core = { path = "../../primitives/core" }
+# cumulus-primitives-core = { path = "../../primitives/core" }
+cumulus-primitives-core = { path = "../../primitives/core", default-features = false }
 
 # Other dependencies
 codec = { package = "parity-scale-codec", version = "2.0.0", features = [ "derive" ] }
@@ -47,3 +49,10 @@ substrate-test-client = { git = "https://github.com/paritytech/substrate", branc
 # Other dependencies
 env_logger = "0.7.1"
 async-trait = "0.1.42"
+
+[features]
+default = [ "std" ]
+std = [
+	"cumulus-primitives-core/std",
+	"sp-io/std",
+]

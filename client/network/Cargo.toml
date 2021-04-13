@@ -34,7 +34,8 @@ tokio = { version = "0.2.21", features = ["macros"] }
 
 # Cumulus deps
 cumulus-test-service = { path = "../../test/service" }
-cumulus-primitives-core = { path = "../../primitives/core" }
+# cumulus-primitives-core = { path = "../../primitives/core" }
+cumulus-primitives-core = { path = "../../primitives/core", default-features = false }
 
 # Polkadot deps
 polkadot-test-client = { git = "https://github.com/paritytech/polkadot", branch = "master" }
@@ -49,3 +50,9 @@ sp-consensus = { git = "https://github.com/paritytech/substrate", branch = "mast
 sc-cli = { git = "https://github.com/paritytech/substrate", branch = "master" }
 substrate-test-utils = { git = "https://github.com/paritytech/substrate", branch = "master" }
 sc-service = { git = "https://github.com/paritytech/substrate", branch = "master" }
+
+[features]
+default = [ "std" ]
+std = [
+	"cumulus-primitives-core/std",
+]

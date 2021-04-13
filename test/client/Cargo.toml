@@ -26,7 +26,9 @@ pallet-balances = { git = "https://gitlab.com/totem-tech/totem-lego", branch = "
 cumulus-test-runtime = { path = "../runtime" }
 cumulus-test-service = { path = "../service" }
 cumulus-test-relay-sproof-builder = { path = "../relay-sproof-builder" }
-cumulus-primitives-core = { path = "../../primitives/core" }
+# cumulus-primitives-core = { path = "../../primitives/core" }
+cumulus-primitives-core = { path = "../../primitives/core", default-features = false }
+
 cumulus-primitives-parachain-inherent = { path = "../../primitives/parachain-inherent" }
 
 # Polkadot deps
@@ -34,3 +36,9 @@ polkadot-primitives = { git = "https://github.com/paritytech/polkadot", branch =
 
 # Other deps
 codec = { package = "parity-scale-codec", version = "2.0.0", default-features = false, features = [ "derive" ] }
+
+[features]
+default = [ "std" ]
+std = [
+	"cumulus-primitives-core/std",
+]

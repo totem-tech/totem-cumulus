@@ -27,7 +27,8 @@ rococo-parachain-primitives = { path = "primitives" }
 
 # Substrate dependencies
 sp-runtime = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
-sp-io = { git = "https://github.com/paritytech/substrate", branch = "master" }
+# sp-io = { git = "https://github.com/paritytech/substrate", branch = "master" }
+sp-io = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
 sp-core = { git = "https://github.com/paritytech/substrate", branch = "master" }
 sp-inherents = { git = "https://github.com/paritytech/substrate", branch = "master" }
 sp-consensus = { git = "https://github.com/paritytech/substrate", branch = "master" }
@@ -61,7 +62,8 @@ cumulus-client-consensus-relay-chain = { path = "../client/consensus/relay-chain
 cumulus-client-collator = { path = "../client/collator" }
 cumulus-client-service = { path = "../client/service" }
 cumulus-client-network = { path = "../client/network" }
-cumulus-primitives-core = { path = "../primitives/core" }
+# cumulus-primitives-core = { path = "../primitives/core" }
+cumulus-primitives-core = { path = "../primitives/core", default-features = false }
 
 # Polkadot dependencies
 polkadot-primitives = { git = "https://github.com/paritytech/polkadot", branch = "master" }
@@ -90,3 +92,10 @@ polkadot-test-service = { git = "https://github.com/paritytech/polkadot", branch
 pallet-sudo = { git = "https://github.com/paritytech/substrate", branch = "master" }
 substrate-test-client = { git = "https://github.com/paritytech/substrate", branch = "master" }
 substrate-test-runtime-client = { git = "https://github.com/paritytech/substrate", branch = "master" }
+
+[features]
+default = [ "std" ]
+std = [
+	"cumulus-primitives-core/std",
+	"sp-io/std",
+]
