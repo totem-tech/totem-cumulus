@@ -219,6 +219,14 @@ impl cumulus_pallet_xcm::Config for Runtime {
 	type XcmExecutor = XcmExecutor<XcmConfig>;
 }
 
+impl pallet_bonsai::Config for Runtime {
+	type Event = Event;
+	type Orders = pallet_orders::Pallet<Self>;
+	type Projects = pallet_teams::Pallet<Self>;
+	type Timekeeping = pallet_timekeeping::Pallet<Self>;
+	type BonsaiConversions = conversion_handler::ConversionHandler;
+}
+
 construct_runtime! {
 	pub enum Runtime where
 		Block = Block,
@@ -231,6 +239,9 @@ construct_runtime! {
 
 		// DMP handler.
 		CumulusXcm: cumulus_pallet_xcm::{Pallet, Call, Storage, Event<T>, Origin},
+
+		// Totem
+		Bonsai: pallet_bonsai::{Pallet, Call, Storage, Event<T>},
 	}
 }
 
