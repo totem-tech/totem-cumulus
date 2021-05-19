@@ -41,7 +41,7 @@ xcm-builder = { git = "https://github.com/paritytech/polkadot", default-features
 xcm-executor = { git = "https://github.com/paritytech/polkadot", default-features = false, branch = "master" }
 
 # Totem dependencies
-pallet-bonsai = { git = "https://github.com/totem-tech/totem-lego", default-features = false, branch = "master" }
+pallet-bonsai = { path = "../pallets/totem/bonsai", default-features = false }
 
 [dev-dependencies]
 hex = "0.4.3"

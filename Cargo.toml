@@ -25,7 +25,13 @@ members = [
 	"test/service",
 	"test/relay-sproof-builder",
 	"test/relay-validation-worker-provider",
+	# Totem
+	"polkadot-parachains/pallets/totem/bonsai",
+	"polkadot-parachains/pallets/totem/common",
 ]
 
 [profile.release]
 panic = "unwind"
+
+[patch.'https://github.com/paritytech/polkadot']
+pallet-balances = { path = "./polkadot-parachains/pallets/totem/balances", default-features = false }
