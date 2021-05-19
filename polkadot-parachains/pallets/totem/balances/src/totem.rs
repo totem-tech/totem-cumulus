@@ -4,6 +4,8 @@ use super::*;
 use frame_support::traits::WithdrawReasons;
 use totem_common::traits::accounting::Posting;
 
+const ESCROW: WithdrawReasons = unsafe { WithdrawReasons::from_bits_unchecked(0b1000_0000) };
+
 /// A currency whose accounts can have liquidity restrictions.
 pub trait TotemLockableCurrency<AccountId>: Currency<AccountId> {
     /// The quantity used to denote time; usually just a `BlockNumber`.
@@ -203,7 +205,7 @@ impl<T: Config<I>, I: 'static> Pallet<T, I> {
     }
 
     fn transfer_to_the_escrow(who: &T::AccountId, amount: T::Balance) -> result::Result<(), DispatchError> {
-        let imba = Self::withdraw(who, amount, WithdrawReasons::ESCROW, ExistenceRequirement::KeepAlive)?;
+        let imba = Self::withdraw(who, amount, ESCROW, ExistenceRequirement::KeepAlive)?;
 
         let escrow_account: T::AccountId = T::Accounting::get_escrow_account();
 

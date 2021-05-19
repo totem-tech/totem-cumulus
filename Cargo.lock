@@ -1485,7 +1485,7 @@ dependencies = [
  "lazy_static",
  "log",
  "memory-db",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "parity-scale-codec",
  "polkadot-parachain",
  "sc-client-api",
@@ -1629,7 +1629,7 @@ dependencies = [
  "log",
  "pallet-assets",
  "pallet-aura",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-randomness-collective-flip",
  "pallet-sudo",
  "pallet-timestamp",
@@ -1672,6 +1672,7 @@ dependencies = [
  "hex",
  "hex-literal 0.3.1",
  "log",
+ "pallet-accounting",
  "pallet-bonsai",
  "parachain-info",
  "parity-scale-codec",
@@ -1704,7 +1705,7 @@ dependencies = [
  "cumulus-test-runtime",
  "cumulus-test-service",
  "frame-system",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-transaction-payment",
  "parity-scale-codec",
  "polkadot-primitives",
@@ -1751,7 +1752,7 @@ dependencies = [
  "frame-executive",
  "frame-support",
  "frame-system",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-randomness-collective-flip",
  "pallet-sudo",
  "pallet-timestamp",
@@ -1782,7 +1783,7 @@ dependencies = [
  "frame-executive",
  "frame-support",
  "frame-system",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-randomness-collective-flip",
  "pallet-sudo",
  "pallet-timestamp",
@@ -3652,7 +3653,7 @@ dependencies = [
  "pallet-authority-discovery",
  "pallet-authorship",
  "pallet-babe",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-bounties",
  "pallet-collective",
  "pallet-democracy",
@@ -4895,6 +4896,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "pallet-accounting"
+version = "1.0.0"
+dependencies = [
+ "frame-support",
+ "frame-system",
+ "pallet-balances 3.0.0",
+ "pallet-randomness-collective-flip",
+ "pallet-timestamp",
+ "parity-scale-codec",
+ "sp-arithmetic",
+ "sp-io",
+ "sp-runtime",
+ "sp-std",
+ "totem-common",
+]
+
+[[package]]
 name = "pallet-assets"
 version = "3.0.0"
 source = "git+https://github.com/paritytech/substrate?branch=master#60eb0c69fa264dd758c91e3d81ac68ef75036b8e"
@@ -4987,6 +5005,23 @@ dependencies = [
  "parity-scale-codec",
  "sp-runtime",
  "sp-std",
+]
+
+[[package]]
+name = "pallet-balances"
+version = "3.0.0"
+dependencies = [
+ "frame-benchmarking",
+ "frame-support",
+ "frame-system",
+ "log",
+ "pallet-transaction-payment",
+ "parity-scale-codec",
+ "sp-core",
+ "sp-io",
+ "sp-runtime",
+ "sp-std",
+ "totem-common",
 ]
 
 [[package]]
@@ -5278,7 +5313,7 @@ dependencies = [
  "frame-support",
  "frame-system",
  "log",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "parity-scale-codec",
  "serde",
  "sp-runtime",
@@ -5512,7 +5547,7 @@ dependencies = [
  "frame-support",
  "frame-system",
  "impl-trait-for-tuples",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "parity-scale-codec",
  "serde",
  "sp-runtime",
@@ -6750,7 +6785,7 @@ dependencies = [
  "pallet-authority-discovery",
  "pallet-authorship",
  "pallet-babe",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-bounties",
  "pallet-collective",
  "pallet-democracy",
@@ -6817,7 +6852,7 @@ dependencies = [
  "libsecp256k1",
  "log",
  "pallet-authorship",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-beefy",
  "pallet-mmr",
  "pallet-offences",
@@ -6858,7 +6893,7 @@ dependencies = [
  "log",
  "pallet-authority-discovery",
  "pallet-authorship",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-offences",
  "pallet-session",
  "pallet-staking",
@@ -7047,7 +7082,7 @@ dependencies = [
  "pallet-authority-discovery",
  "pallet-authorship",
  "pallet-babe",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-grandpa",
  "pallet-indices",
  "pallet-mmr-primitives",
@@ -7098,7 +7133,7 @@ dependencies = [
  "futures 0.1.30",
  "futures 0.3.14",
  "hex",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-staking",
  "pallet-transaction-payment",
  "polkadot-node-primitives",
@@ -7905,7 +7940,7 @@ dependencies = [
  "pallet-authority-discovery",
  "pallet-authorship",
  "pallet-babe",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-beefy",
  "pallet-collective",
  "pallet-grandpa",
@@ -11876,7 +11911,7 @@ dependencies = [
  "pallet-authority-discovery",
  "pallet-authorship",
  "pallet-babe",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-collective",
  "pallet-democracy",
  "pallet-election-provider-multi-phase",
@@ -12150,7 +12185,3 @@ dependencies = [
  "cc",
  "libc",
 ]
-
-[[patch.unused]]
-name = "pallet-balances"
-version = "3.0.0"
