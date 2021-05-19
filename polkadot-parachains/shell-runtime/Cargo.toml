@@ -41,7 +41,16 @@ xcm-builder = { git = "https://github.com/paritytech/polkadot", default-features
 xcm-executor = { git = "https://github.com/paritytech/polkadot", default-features = false, branch = "master" }
 
 # Totem Dependencies
+pallet-balances = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
+pallet-accounting = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
+pallet-archive = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
 pallet-bonsai = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
+pallet-funding = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
+pallet-orders = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
+pallet-prefunding = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
+pallet-teams = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
+pallet-timekeeping = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
+pallet-transfer = { git = "https://gitlab.com/totem-tech/totem-lego", default-features = false, branch = "master" }
 
 [dev-dependencies]
 hex = "0.4.3"

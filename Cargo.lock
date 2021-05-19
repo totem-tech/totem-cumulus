@@ -465,7 +465,7 @@ dependencies = [
  "sc-keystore",
  "sc-network",
  "sc-network-gossip",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-arithmetic 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
@@ -505,7 +505,7 @@ version = "0.1.0"
 source = "git+https://github.com/paritytech/grandpa-bridge-gadget?branch=master#6008d67f94262f955017fad3c1648e3206756a60"
 dependencies = [
  "parity-scale-codec",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -1283,7 +1283,7 @@ dependencies = [
  "polkadot-overseer",
  "polkadot-primitives",
  "sc-client-api",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-consensus",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -1310,7 +1310,7 @@ dependencies = [
  "sc-consensus-aura",
  "sc-consensus-slots",
  "sc-telemetry",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-blockchain",
@@ -1338,7 +1338,7 @@ dependencies = [
  "polkadot-primitives",
  "polkadot-runtime",
  "sc-client-api",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-blockchain",
  "sp-consensus",
@@ -1364,7 +1364,7 @@ dependencies = [
  "parking_lot 0.9.0",
  "polkadot-service",
  "sc-client-api",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-blockchain",
  "sp-consensus",
@@ -1395,7 +1395,7 @@ dependencies = [
  "sc-cli",
  "sc-client-api",
  "sc-service",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-consensus",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -1423,7 +1423,7 @@ dependencies = [
  "sc-service",
  "sc-telemetry",
  "sc-tracing",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-consensus",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -1485,7 +1485,7 @@ dependencies = [
  "lazy_static",
  "log",
  "memory-db",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "parity-scale-codec",
  "polkadot-parachain",
  "sc-client-api",
@@ -1566,7 +1566,7 @@ dependencies = [
  "polkadot-core-primitives",
  "polkadot-parachain",
  "polkadot-primitives",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-std 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-trie 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -1582,7 +1582,7 @@ dependencies = [
  "parity-scale-codec",
  "polkadot-service",
  "sc-client-api",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-inherents 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -1629,17 +1629,17 @@ dependencies = [
  "log",
  "pallet-assets",
  "pallet-aura",
- "pallet-balances",
- "pallet-randomness-collective-flip",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
+ "pallet-randomness-collective-flip 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-sudo",
- "pallet-timestamp",
+ "pallet-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-transaction-payment",
  "pallet-xcm",
  "parachain-info",
  "parity-scale-codec",
  "polkadot-parachain",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-consensus-aura",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -1672,12 +1672,21 @@ dependencies = [
  "hex",
  "hex-literal 0.3.1",
  "log",
+ "pallet-accounting",
+ "pallet-archive",
+ "pallet-balances 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
  "pallet-bonsai",
+ "pallet-funding",
+ "pallet-orders",
+ "pallet-prefunding",
+ "pallet-teams",
+ "pallet-timekeeping",
+ "pallet-transfer",
  "parachain-info",
  "parity-scale-codec",
  "polkadot-parachain",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-inherents 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -1704,14 +1713,14 @@ dependencies = [
  "cumulus-test-runtime",
  "cumulus-test-service",
  "frame-system 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-transaction-payment",
  "parity-scale-codec",
  "polkadot-primitives",
  "sc-block-builder",
  "sc-consensus",
  "sc-service",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-inherents 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -1719,7 +1728,7 @@ dependencies = [
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-state-machine 0.9.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-test-primitives",
- "sp-timestamp",
+ "sp-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "substrate-test-client",
 ]
 
@@ -1751,15 +1760,15 @@ dependencies = [
  "frame-executive",
  "frame-support 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "frame-system 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
- "pallet-balances",
- "pallet-randomness-collective-flip",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
+ "pallet-randomness-collective-flip 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-sudo",
- "pallet-timestamp",
+ "pallet-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-transaction-payment",
  "parity-scale-codec",
  "polkadot-parachain",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-inherents 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -1782,15 +1791,15 @@ dependencies = [
  "frame-executive",
  "frame-support 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "frame-system 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
- "pallet-balances",
- "pallet-randomness-collective-flip",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
+ "pallet-randomness-collective-flip 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-sudo",
- "pallet-timestamp",
+ "pallet-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-transaction-payment",
  "parity-scale-codec",
  "polkadot-parachain",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-inherents 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -1840,7 +1849,7 @@ dependencies = [
  "sc-tracing",
  "sc-transaction-pool",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-arithmetic 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-blockchain",
@@ -1851,7 +1860,7 @@ dependencies = [
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-session",
  "sp-state-machine 0.9.0 (git+https://github.com/paritytech/substrate?branch=master)",
- "sp-timestamp",
+ "sp-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-transaction-pool",
  "sp-trie 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "substrate-test-client",
@@ -2396,7 +2405,7 @@ dependencies = [
  "log",
  "parity-scale-codec",
  "paste 1.0.4",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-io 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime-interface 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -2469,7 +2478,7 @@ dependencies = [
 [[package]]
 name = "frame-metadata"
 version = "13.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "parity-scale-codec",
  "serde",
@@ -2506,7 +2515,7 @@ dependencies = [
 [[package]]
 name = "frame-support"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "bitflags",
  "frame-metadata 13.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
@@ -2544,7 +2553,7 @@ dependencies = [
 [[package]]
 name = "frame-support-procedural"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "Inflector",
  "frame-support-procedural-tools 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
@@ -2568,7 +2577,7 @@ dependencies = [
 [[package]]
 name = "frame-support-procedural-tools"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "frame-support-procedural-tools-derive 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
  "proc-macro-crate 1.0.0",
@@ -2590,7 +2599,7 @@ dependencies = [
 [[package]]
 name = "frame-support-procedural-tools-derive"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "proc-macro2 1.0.26",
  "quote 1.0.9",
@@ -2617,7 +2626,7 @@ dependencies = [
 [[package]]
 name = "frame-system"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "frame-support 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
  "impl-trait-for-tuples",
@@ -2637,7 +2646,7 @@ version = "3.0.0"
 source = "git+https://github.com/paritytech/substrate?branch=master#d908ef803a0368236c8f5891cbe4df11d6e85ec6"
 dependencies = [
  "parity-scale-codec",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
 ]
 
 [[package]]
@@ -2647,7 +2656,7 @@ source = "git+https://github.com/paritytech/substrate?branch=master#d908ef803a03
 dependencies = [
  "frame-support 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "parity-scale-codec",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-std 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
 ]
@@ -3740,7 +3749,7 @@ dependencies = [
  "pallet-authority-discovery",
  "pallet-authorship",
  "pallet-babe",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-bounties",
  "pallet-collective",
  "pallet-democracy",
@@ -3757,14 +3766,14 @@ dependencies = [
  "pallet-nicks",
  "pallet-offences",
  "pallet-proxy",
- "pallet-randomness-collective-flip",
+ "pallet-randomness-collective-flip 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-recovery",
  "pallet-scheduler",
  "pallet-session",
  "pallet-society",
  "pallet-staking",
  "pallet-staking-reward-fn",
- "pallet-timestamp",
+ "pallet-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-tips",
  "pallet-transaction-payment",
  "pallet-transaction-payment-rpc-runtime-api",
@@ -3780,7 +3789,7 @@ dependencies = [
  "serde",
  "serde_derive",
  "smallvec 1.6.1",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-arithmetic 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-authority-discovery",
  "sp-block-builder",
@@ -4983,6 +4992,36 @@ dependencies = [
 ]
 
 [[package]]
+name = "pallet-accounting"
+version = "1.0.0"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
+dependencies = [
+ "frame-support 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "frame-system 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "pallet-balances 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "pallet-randomness-collective-flip 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "pallet-timestamp 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "parity-scale-codec",
+ "sp-arithmetic 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-io 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-runtime 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-std 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "totem-common",
+]
+
+[[package]]
+name = "pallet-archive"
+version = "1.0.0"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
+dependencies = [
+ "frame-support 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "frame-system 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "parity-scale-codec",
+ "sp-std 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "totem-common",
+]
+
+[[package]]
 name = "pallet-assets"
 version = "3.0.0"
 source = "git+https://github.com/paritytech/substrate?branch=master#d908ef803a0368236c8f5891cbe4df11d6e85ec6"
@@ -5003,7 +5042,7 @@ dependencies = [
  "frame-support 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "frame-system 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-session",
- "pallet-timestamp",
+ "pallet-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "parity-scale-codec",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-consensus-aura",
@@ -5051,7 +5090,7 @@ dependencies = [
  "log",
  "pallet-authorship",
  "pallet-session",
- "pallet-timestamp",
+ "pallet-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "parity-scale-codec",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-consensus-babe",
@@ -5078,6 +5117,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "pallet-balances"
+version = "3.0.0"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
+dependencies = [
+ "frame-support 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "frame-system 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "log",
+ "parity-scale-codec",
+ "sp-runtime 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-std 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "totem-common",
+]
+
+[[package]]
 name = "pallet-beefy"
 version = "0.1.0"
 source = "git+https://github.com/paritytech/grandpa-bridge-gadget?branch=master#6008d67f94262f955017fad3c1648e3206756a60"
@@ -5095,7 +5148,7 @@ dependencies = [
 [[package]]
 name = "pallet-bonsai"
 version = "1.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "frame-support 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
  "frame-system 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
@@ -5181,6 +5234,19 @@ dependencies = [
  "sp-npos-elections",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-std 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
+]
+
+[[package]]
+name = "pallet-funding"
+version = "1.0.0"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
+dependencies = [
+ "frame-support 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "frame-system 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "pallet-timestamp 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "parity-scale-codec",
+ "sp-std 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "totem-common",
 ]
 
 [[package]]
@@ -5308,7 +5374,7 @@ dependencies = [
  "log",
  "parity-scale-codec",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-std 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -5325,7 +5391,7 @@ dependencies = [
  "pallet-mmr-primitives",
  "parity-scale-codec",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-rpc",
@@ -5367,12 +5433,44 @@ dependencies = [
  "frame-support 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "frame-system 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "log",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "parity-scale-codec",
  "serde",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-staking 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-std 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
+]
+
+[[package]]
+name = "pallet-orders"
+version = "1.0.0"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
+dependencies = [
+ "frame-support 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "frame-system 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "pallet-accounting",
+ "pallet-balances 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "parity-scale-codec",
+ "sp-runtime 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-std 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "totem-common",
+]
+
+[[package]]
+name = "pallet-prefunding"
+version = "1.0.0"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
+dependencies = [
+ "frame-support 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "frame-system 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "pallet-accounting",
+ "pallet-balances 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "pallet-timestamp 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "parity-scale-codec",
+ "sp-io 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-runtime 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-std 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "totem-common",
 ]
 
 [[package]]
@@ -5400,6 +5498,19 @@ dependencies = [
  "safe-mix",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-std 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
+]
+
+[[package]]
+name = "pallet-randomness-collective-flip"
+version = "3.0.0"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
+dependencies = [
+ "frame-support 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "frame-system 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "parity-scale-codec",
+ "safe-mix",
+ "sp-runtime 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-std 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
 ]
 
 [[package]]
@@ -5439,7 +5550,7 @@ dependencies = [
  "frame-support 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "frame-system 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "impl-trait-for-tuples",
- "pallet-timestamp",
+ "pallet-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "parity-scale-codec",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-io 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -5519,6 +5630,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "pallet-teams"
+version = "1.0.0"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
+dependencies = [
+ "frame-support 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "frame-system 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "parity-scale-codec",
+ "sp-std 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "totem-common",
+]
+
+[[package]]
+name = "pallet-timekeeping"
+version = "1.0.0"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
+dependencies = [
+ "frame-support 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "frame-system 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "parity-scale-codec",
+ "sp-std 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "totem-common",
+]
+
+[[package]]
 name = "pallet-timestamp"
 version = "3.0.0"
 source = "git+https://github.com/paritytech/substrate?branch=master#d908ef803a0368236c8f5891cbe4df11d6e85ec6"
@@ -5532,7 +5667,23 @@ dependencies = [
  "sp-inherents 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-std 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
- "sp-timestamp",
+ "sp-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
+]
+
+[[package]]
+name = "pallet-timestamp"
+version = "3.0.0"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
+dependencies = [
+ "frame-support 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "frame-system 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "impl-trait-for-tuples",
+ "log",
+ "parity-scale-codec",
+ "sp-inherents 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-runtime 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-std 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-timestamp 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
 ]
 
 [[package]]
@@ -5575,7 +5726,7 @@ dependencies = [
  "jsonrpc-derive",
  "pallet-transaction-payment-rpc-runtime-api",
  "parity-scale-codec",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-rpc",
@@ -5589,8 +5740,22 @@ source = "git+https://github.com/paritytech/substrate?branch=master#d908ef803a03
 dependencies = [
  "pallet-transaction-payment",
  "parity-scale-codec",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
+]
+
+[[package]]
+name = "pallet-transfer"
+version = "1.0.0"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
+dependencies = [
+ "frame-support 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "frame-system 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "pallet-balances 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "parity-scale-codec",
+ "sp-runtime 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-std 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "totem-common",
 ]
 
 [[package]]
@@ -5601,7 +5766,7 @@ dependencies = [
  "frame-support 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "frame-system 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "impl-trait-for-tuples",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "parity-scale-codec",
  "serde",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -6241,7 +6406,7 @@ dependencies = [
  "sc-tracing",
  "sc-transaction-pool",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-blockchain",
  "sp-consensus",
@@ -6253,7 +6418,7 @@ dependencies = [
  "sp-offchain",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-session",
- "sp-timestamp",
+ "sp-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-transaction-pool",
  "structopt",
  "substrate-build-script-utils",
@@ -6564,7 +6729,7 @@ dependencies = [
  "polkadot-node-subsystem",
  "polkadot-node-subsystem-util",
  "polkadot-primitives",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-authority-discovery",
  "sp-consensus-babe",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -6720,7 +6885,7 @@ dependencies = [
  "polkadot-primitives",
  "polkadot-procmacro-overseer-subsystems-gen",
  "sc-client-api",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "tracing",
 ]
 
@@ -6752,7 +6917,7 @@ dependencies = [
  "polkadot-core-primitives",
  "polkadot-parachain",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-arithmetic 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-authority-discovery",
@@ -6812,7 +6977,7 @@ dependencies = [
  "sc-keystore",
  "sc-rpc",
  "sc-sync-state-rpc",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-blockchain",
  "sp-consensus",
@@ -6839,7 +7004,7 @@ dependencies = [
  "pallet-authority-discovery",
  "pallet-authorship",
  "pallet-babe",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-bounties",
  "pallet-collective",
  "pallet-democracy",
@@ -6855,12 +7020,12 @@ dependencies = [
  "pallet-nicks",
  "pallet-offences",
  "pallet-proxy",
- "pallet-randomness-collective-flip",
+ "pallet-randomness-collective-flip 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-scheduler",
  "pallet-session",
  "pallet-staking",
  "pallet-staking-reward-curve",
- "pallet-timestamp",
+ "pallet-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-tips",
  "pallet-transaction-payment",
  "pallet-transaction-payment-rpc-runtime-api",
@@ -6874,7 +7039,7 @@ dependencies = [
  "serde",
  "serde_derive",
  "smallvec 1.6.1",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-authority-discovery",
  "sp-block-builder",
  "sp-consensus-babe",
@@ -6906,13 +7071,13 @@ dependencies = [
  "libsecp256k1",
  "log",
  "pallet-authorship",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-beefy",
  "pallet-mmr",
  "pallet-offences",
  "pallet-session",
  "pallet-staking",
- "pallet-timestamp",
+ "pallet-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-transaction-payment",
  "pallet-treasury",
  "pallet-vesting",
@@ -6923,7 +7088,7 @@ dependencies = [
  "serde",
  "serde_derive",
  "slot-range-helper",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-inherents 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-io 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -6947,11 +7112,11 @@ dependencies = [
  "log",
  "pallet-authority-discovery",
  "pallet-authorship",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-offences",
  "pallet-session",
  "pallet-staking",
- "pallet-timestamp",
+ "pallet-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-vesting",
  "parity-scale-codec",
  "polkadot-primitives",
@@ -6959,7 +7124,7 @@ dependencies = [
  "rand_chacha 0.3.0",
  "rustc-hex",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-inherents 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-io 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -7039,7 +7204,7 @@ dependencies = [
  "sc-telemetry",
  "sc-transaction-pool",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-authority-discovery",
  "sp-block-builder",
  "sp-blockchain",
@@ -7055,7 +7220,7 @@ dependencies = [
  "sp-session",
  "sp-state-machine 0.9.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-storage 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
- "sp-timestamp",
+ "sp-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-transaction-pool",
  "sp-trie 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "substrate-prometheus-endpoint",
@@ -7108,7 +7273,7 @@ dependencies = [
  "sc-block-builder",
  "sc-consensus",
  "sc-service",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-consensus",
  "sp-consensus-babe",
@@ -7116,7 +7281,7 @@ dependencies = [
  "sp-inherents 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-state-machine 0.9.0 (git+https://github.com/paritytech/substrate?branch=master)",
- "sp-timestamp",
+ "sp-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "substrate-test-client",
 ]
 
@@ -7136,18 +7301,18 @@ dependencies = [
  "pallet-authority-discovery",
  "pallet-authorship",
  "pallet-babe",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-grandpa",
  "pallet-indices",
  "pallet-mmr-primitives",
  "pallet-nicks",
  "pallet-offences",
- "pallet-randomness-collective-flip",
+ "pallet-randomness-collective-flip 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-session",
  "pallet-staking",
  "pallet-staking-reward-curve",
  "pallet-sudo",
- "pallet-timestamp",
+ "pallet-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-transaction-payment",
  "pallet-transaction-payment-rpc-runtime-api",
  "pallet-vesting",
@@ -7160,7 +7325,7 @@ dependencies = [
  "serde",
  "serde_derive",
  "smallvec 1.6.1",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-authority-discovery",
  "sp-block-builder",
  "sp-consensus-babe",
@@ -7187,7 +7352,7 @@ dependencies = [
  "futures 0.1.30",
  "futures 0.3.14",
  "hex",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-staking",
  "pallet-transaction-payment",
  "polkadot-node-primitives",
@@ -7994,7 +8159,7 @@ dependencies = [
  "pallet-authority-discovery",
  "pallet-authorship",
  "pallet-babe",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-beefy",
  "pallet-collective",
  "pallet-grandpa",
@@ -8009,7 +8174,7 @@ dependencies = [
  "pallet-staking",
  "pallet-staking-reward-curve",
  "pallet-sudo",
- "pallet-timestamp",
+ "pallet-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-transaction-payment",
  "pallet-transaction-payment-rpc-runtime-api",
  "pallet-utility",
@@ -8022,7 +8187,7 @@ dependencies = [
  "serde",
  "serde_derive",
  "smallvec 1.6.1",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-authority-discovery",
  "sp-block-builder",
  "sp-consensus-babe",
@@ -8203,7 +8368,7 @@ dependencies = [
  "sc-client-api",
  "sc-network",
  "serde_json",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-authority-discovery",
  "sp-blockchain",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -8225,7 +8390,7 @@ dependencies = [
  "sc-client-api",
  "sc-proposer-metrics",
  "sc-telemetry",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-consensus",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -8242,7 +8407,7 @@ source = "git+https://github.com/paritytech/substrate?branch=master#d908ef803a03
 dependencies = [
  "parity-scale-codec",
  "sc-client-api",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-blockchain",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -8336,7 +8501,7 @@ dependencies = [
  "parity-scale-codec",
  "parking_lot 0.11.1",
  "sc-executor",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-consensus",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -8412,7 +8577,7 @@ dependencies = [
  "sc-client-api",
  "sc-consensus-slots",
  "sc-telemetry",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-blockchain",
@@ -8456,7 +8621,7 @@ dependencies = [
  "sc-telemetry",
  "schnorrkel",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-blockchain",
@@ -8488,7 +8653,7 @@ dependencies = [
  "sc-consensus-epochs",
  "sc-rpc-api",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-consensus",
@@ -8524,7 +8689,7 @@ dependencies = [
  "parity-scale-codec",
  "sc-client-api",
  "sc-telemetry",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-arithmetic 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
@@ -8534,7 +8699,7 @@ dependencies = [
  "sp-inherents 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-state-machine 0.9.0 (git+https://github.com/paritytech/substrate?branch=master)",
- "sp-timestamp",
+ "sp-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-trie 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "thiserror",
 ]
@@ -8565,7 +8730,7 @@ dependencies = [
  "sc-executor-common",
  "sc-executor-wasmi",
  "sc-executor-wasmtime",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-externalities 0.9.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-io 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -8656,7 +8821,7 @@ dependencies = [
  "sc-network-gossip",
  "sc-telemetry",
  "serde_json",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-arithmetic 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
@@ -8764,7 +8929,7 @@ dependencies = [
  "parking_lot 0.11.1",
  "sc-client-api",
  "sc-executor",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-externalities 0.9.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -8862,7 +9027,7 @@ dependencies = [
  "sc-client-api",
  "sc-keystore",
  "sc-network",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-offchain",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -8911,7 +9076,7 @@ dependencies = [
  "sc-rpc-api",
  "sc-tracing",
  "serde_json",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-chain-spec",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -9008,7 +9173,7 @@ dependencies = [
  "sc-transaction-pool",
  "serde",
  "serde_json",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-blockchain",
@@ -9109,7 +9274,7 @@ dependencies = [
  "sc-tracing-proc-macro",
  "serde",
  "serde_json",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-blockchain",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -9173,7 +9338,7 @@ dependencies = [
  "parking_lot 0.11.1",
  "sc-client-api",
  "sc-transaction-graph",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -9609,7 +9774,7 @@ dependencies = [
  "hash-db",
  "log",
  "parity-scale-codec",
- "sp-api-proc-macro",
+ "sp-api-proc-macro 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-state-machine 0.9.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -9619,9 +9784,35 @@ dependencies = [
 ]
 
 [[package]]
+name = "sp-api"
+version = "3.0.0"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
+dependencies = [
+ "log",
+ "parity-scale-codec",
+ "sp-api-proc-macro 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-core 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-runtime 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-std 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-version 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+]
+
+[[package]]
 name = "sp-api-proc-macro"
 version = "3.0.0"
 source = "git+https://github.com/paritytech/substrate?branch=master#d908ef803a0368236c8f5891cbe4df11d6e85ec6"
+dependencies = [
+ "blake2-rfc",
+ "proc-macro-crate 1.0.0",
+ "proc-macro2 1.0.26",
+ "quote 1.0.9",
+ "syn 1.0.68",
+]
+
+[[package]]
+name = "sp-api-proc-macro"
+version = "3.0.0"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "blake2-rfc",
  "proc-macro-crate 1.0.0",
@@ -9645,7 +9836,7 @@ dependencies = [
 [[package]]
 name = "sp-application-crypto"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "parity-scale-codec",
  "serde",
@@ -9671,7 +9862,7 @@ dependencies = [
 [[package]]
 name = "sp-arithmetic"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "integer-sqrt",
  "num-traits",
@@ -9688,7 +9879,7 @@ version = "3.0.0"
 source = "git+https://github.com/paritytech/substrate?branch=master#d908ef803a0368236c8f5891cbe4df11d6e85ec6"
 dependencies = [
  "parity-scale-codec",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-std 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -9712,7 +9903,7 @@ version = "3.0.0"
 source = "git+https://github.com/paritytech/substrate?branch=master#d908ef803a0368236c8f5891cbe4df11d6e85ec6"
 dependencies = [
  "parity-scale-codec",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-inherents 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-std 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -9728,7 +9919,7 @@ dependencies = [
  "lru",
  "parity-scale-codec",
  "parking_lot 0.11.1",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-consensus",
  "sp-database",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -9758,7 +9949,7 @@ dependencies = [
  "parity-scale-codec",
  "parking_lot 0.11.1",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-inherents 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -9779,14 +9970,14 @@ source = "git+https://github.com/paritytech/substrate?branch=master#d908ef803a03
 dependencies = [
  "async-trait",
  "parity-scale-codec",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-consensus",
  "sp-consensus-slots",
  "sp-inherents 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-std 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
- "sp-timestamp",
+ "sp-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
 ]
 
 [[package]]
@@ -9798,7 +9989,7 @@ dependencies = [
  "merlin",
  "parity-scale-codec",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-consensus",
  "sp-consensus-slots",
@@ -9808,7 +9999,7 @@ dependencies = [
  "sp-keystore 0.9.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-std 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
- "sp-timestamp",
+ "sp-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
 ]
 
 [[package]]
@@ -9880,7 +10071,7 @@ dependencies = [
 [[package]]
 name = "sp-core"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "base58",
  "blake2-rfc",
@@ -9943,7 +10134,7 @@ dependencies = [
 [[package]]
 name = "sp-debug-derive"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "proc-macro2 1.0.26",
  "quote 1.0.9",
@@ -9964,7 +10155,7 @@ dependencies = [
 [[package]]
 name = "sp-externalities"
 version = "0.9.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "environmental",
  "parity-scale-codec",
@@ -9981,7 +10172,7 @@ dependencies = [
  "log",
  "parity-scale-codec",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-keystore 0.9.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -10006,7 +10197,7 @@ dependencies = [
 [[package]]
 name = "sp-inherents"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "async-trait",
  "impl-trait-for-tuples",
@@ -10045,7 +10236,7 @@ dependencies = [
 [[package]]
 name = "sp-io"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "futures 0.3.14",
  "hash-db",
@@ -10097,7 +10288,7 @@ dependencies = [
 [[package]]
 name = "sp-keystore"
 version = "0.9.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "async-trait",
  "derive_more 0.99.11",
@@ -10148,7 +10339,7 @@ name = "sp-offchain"
 version = "3.0.0"
 source = "git+https://github.com/paritytech/substrate?branch=master#d908ef803a0368236c8f5891cbe4df11d6e85ec6"
 dependencies = [
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
 ]
@@ -10164,7 +10355,7 @@ dependencies = [
 [[package]]
 name = "sp-panic-handler"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "backtrace",
 ]
@@ -10204,7 +10395,7 @@ dependencies = [
 [[package]]
 name = "sp-runtime"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "either",
  "hash256-std-hasher",
@@ -10242,7 +10433,7 @@ dependencies = [
 [[package]]
 name = "sp-runtime-interface"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "impl-trait-for-tuples",
  "parity-scale-codec",
@@ -10271,7 +10462,7 @@ dependencies = [
 [[package]]
 name = "sp-runtime-interface-proc-macro"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "Inflector",
  "proc-macro-crate 1.0.0",
@@ -10295,7 +10486,7 @@ version = "3.0.0"
 source = "git+https://github.com/paritytech/substrate?branch=master#d908ef803a0368236c8f5891cbe4df11d6e85ec6"
 dependencies = [
  "parity-scale-codec",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-staking 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -10315,7 +10506,7 @@ dependencies = [
 [[package]]
 name = "sp-staking"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "parity-scale-codec",
  "sp-runtime 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
@@ -10348,7 +10539,7 @@ dependencies = [
 [[package]]
 name = "sp-state-machine"
 version = "0.9.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "hash-db",
  "log",
@@ -10376,7 +10567,7 @@ source = "git+https://github.com/paritytech/substrate?branch=master#d908ef803a03
 [[package]]
 name = "sp-std"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 
 [[package]]
 name = "sp-storage"
@@ -10394,7 +10585,7 @@ dependencies = [
 [[package]]
 name = "sp-storage"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "impl-serde",
  "parity-scale-codec",
@@ -10439,12 +10630,24 @@ dependencies = [
  "futures-timer 3.0.2",
  "log",
  "parity-scale-codec",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-inherents 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-std 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "thiserror",
  "wasm-timer",
+]
+
+[[package]]
+name = "sp-timestamp"
+version = "3.0.0"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
+dependencies = [
+ "parity-scale-codec",
+ "sp-api 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-inherents 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-runtime 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
+ "sp-std 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
 ]
 
 [[package]]
@@ -10468,7 +10671,7 @@ dependencies = [
 [[package]]
 name = "sp-tracing"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "erased-serde",
  "log",
@@ -10493,7 +10696,7 @@ dependencies = [
  "log",
  "parity-scale-codec",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-runtime 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "thiserror",
@@ -10516,7 +10719,7 @@ dependencies = [
 [[package]]
 name = "sp-trie"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "hash-db",
  "memory-db",
@@ -10555,7 +10758,7 @@ dependencies = [
 [[package]]
 name = "sp-version"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "impl-serde",
  "parity-scale-codec",
@@ -10590,7 +10793,7 @@ dependencies = [
 [[package]]
 name = "sp-wasm-interface"
 version = "3.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "impl-trait-for-tuples",
  "parity-scale-codec",
@@ -10768,7 +10971,7 @@ dependencies = [
  "sc-client-api",
  "sc-rpc-api",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-blockchain",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -10831,12 +11034,12 @@ dependencies = [
  "log",
  "memory-db",
  "pallet-babe",
- "pallet-timestamp",
+ "pallet-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "parity-scale-codec",
  "parity-util-mem",
  "sc-service",
  "serde",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-application-crypto 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-block-builder",
  "sp-consensus-aura",
@@ -10872,7 +11075,7 @@ dependencies = [
  "sc-consensus",
  "sc-light",
  "sc-service",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-consensus",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -11420,7 +11623,7 @@ dependencies = [
 [[package]]
 name = "totem-common"
 version = "1.0.0"
-source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#6460e3db2828b43dcdf8e5aa4c932e2f0d4ebeef"
+source = "git+https://gitlab.com/totem-tech/totem-lego?branch=master#7275fe88a3a71fc034759f0dfd3d024d24a25401"
 dependencies = [
  "frame-support 3.0.0 (git+https://gitlab.com/totem-tech/totem-lego?branch=master)",
  "parity-scale-codec",
@@ -11619,7 +11822,7 @@ dependencies = [
  "sc-client-api",
  "sc-executor",
  "sc-service",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-blockchain",
  "sp-core 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-externalities 0.9.0 (git+https://github.com/paritytech/substrate?branch=master)",
@@ -11635,7 +11838,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "04f8ab788026715fa63b31960869617cba39117e520eb415b0139543e325ab59"
 dependencies = [
  "cfg-if 0.1.10",
- "rand 0.6.5",
+ "rand 0.3.23",
  "static_assertions",
 ]
 
@@ -12275,7 +12478,7 @@ dependencies = [
  "pallet-authority-discovery",
  "pallet-authorship",
  "pallet-babe",
- "pallet-balances",
+ "pallet-balances 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-collective",
  "pallet-democracy",
  "pallet-election-provider-multi-phase",
@@ -12290,7 +12493,7 @@ dependencies = [
  "pallet-nicks",
  "pallet-offences",
  "pallet-proxy",
- "pallet-randomness-collective-flip",
+ "pallet-randomness-collective-flip 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-recovery",
  "pallet-scheduler",
  "pallet-session",
@@ -12298,7 +12501,7 @@ dependencies = [
  "pallet-staking",
  "pallet-staking-reward-curve",
  "pallet-sudo",
- "pallet-timestamp",
+ "pallet-timestamp 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "pallet-transaction-payment",
  "pallet-transaction-payment-rpc-runtime-api",
  "pallet-treasury",
@@ -12314,7 +12517,7 @@ dependencies = [
  "serde",
  "serde_derive",
  "smallvec 1.6.1",
- "sp-api",
+ "sp-api 3.0.0 (git+https://github.com/paritytech/substrate?branch=master)",
  "sp-authority-discovery",
  "sp-block-builder",
  "sp-consensus-babe",

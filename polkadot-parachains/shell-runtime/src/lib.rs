@@ -219,12 +219,85 @@ impl cumulus_pallet_xcm::Config for Runtime {
 	type XcmExecutor = XcmExecutor<XcmConfig>;
 }
 
+parameter_types! {
+	// pub const ExistentialDeposit: Balance = 1 * DOLLARS;
+	pub const ExistentialDeposit: Balance = 1; // In Totem accounts must exist
+	// For weight estimation, we assume that the most locks on an individual account will be 50.
+	// This number may need to be adjusted in the future if this assumption no longer holds true.
+	pub const MaxLocks: u32 = 50;
+}
+
+impl pallet_balances::Config for Runtime {
+	type Call = Call;
+	type MaxLocks = MaxLocks;
+	type Balance = Balance;
+	type DustRemoval = ();
+	type Event = Event;
+	type ExistentialDeposit = ExistentialDeposit;
+	type AccountStore = frame_system::Pallet<Runtime>;
+	type WeightInfo = pallet_balances::weights::SubstrateWeight<Runtime>;
+	type Accounting = pallet_accounting::Pallet<Self>;
+}
+
+impl pallet_accounting::Config for Runtime {
+	type Call = Call;
+	type Event = Event;
+	type AccountingConversions = conversion_handler::ConversionHandler;
+}
+
+impl pallet_archive::Config for Runtime {
+	type Call = Call;
+	type Event = Event;
+	type Timekeeping = pallet_timekeeping::Pallet<Self>;
+}
+
 impl pallet_bonsai::Config for Runtime {
+	type Call = Call;
 	type Event = Event;
 	type Orders = pallet_orders::Pallet<Self>;
 	type Projects = pallet_teams::Pallet<Self>;
 	type Timekeeping = pallet_timekeeping::Pallet<Self>;
 	type BonsaiConversions = conversion_handler::ConversionHandler;
+}
+
+impl pallet_funding::Config for Runtime {
+	type Call = Call;
+	type Event = Event;
+}
+
+impl pallet_orders::Config for Runtime {
+	type Call = Call;
+	type Event = Event;
+	type Accounting = pallet_accounting::Pallet<Self>;
+	type Prefunding = pallet_prefunding::Pallet<Self>;
+	type OrderConversions = conversion_handler::ConversionHandler;
+	type Bonsai = pallet_bonsai::Pallet<Self>;
+}
+
+impl pallet_prefunding::Config for Runtime {
+	type Call = Call;
+	type Event = Event;
+	type Currency = pallet_balances::Pallet<Self>;
+	type PrefundingConversions = conversion_handler::ConversionHandler;
+}
+
+impl pallet_teams::Config for Runtime {
+	type Call = Call;
+	type Event = Event;
+}
+
+impl pallet_timekeeping::Config for Runtime {
+	type Call = Call;
+	type Event = Event;
+	type Projects = Teams;
+}
+
+impl pallet_transfer::Config for Runtime {
+	type Call = Call;
+	type Event = Event;
+	type Currency = pallet_balances::Pallet<Self>;
+	type TransferConversions = conversion_handler::ConversionHandler;
+	type Bonsai = pallet_bonsai::Pallet<Self>;
 }
 
 construct_runtime! {
@@ -241,7 +314,16 @@ construct_runtime! {
 		CumulusXcm: cumulus_pallet_xcm::{Pallet, Call, Storage, Event<T>, Origin},
 
 		// Totem
+		Balances: pallet_balances::{Pallet, Call, Storage, Config<T>, Event<T>},
+		Accounting: pallet_accounting::{Pallet, Call, Storage, Event<T>},
+		Archive: pallet_archive::{Pallet, Call, Storage, Event<T>},
 		Bonsai: pallet_bonsai::{Pallet, Call, Storage, Event<T>},
+		Funding: pallet_funding::{Pallet, Call, Storage, Config<T>, Event<T>},
+		Orders: pallet_orders::{Pallet, Call, Storage, Event<T>},
+		Prefunding: pallet_prefunding::{Pallet, Call, Storage, Event<T>},
+		Teams: pallet_teams::{Pallet, Call, Storage, Event<T>},
+		Timekeeping: pallet_timekeeping::{Pallet, Call, Storage, Event<T>},
+		Transfer: pallet_transfer::{Pallet, Call, Storage, Event<T>},
 	}
 }
 
