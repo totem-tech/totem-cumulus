@@ -40,10 +40,6 @@ xcm = { git = "https://github.com/paritytech/polkadot", default-features = false
 xcm-builder = { git = "https://github.com/paritytech/polkadot", default-features = false, branch = "master" }
 xcm-executor = { git = "https://github.com/paritytech/polkadot", default-features = false, branch = "master" }
 
-# Totem dependencies
-pallet-bonsai = { path = "../pallets/totem/bonsai", default-features = false }
-pallet-accounting = { path = "../pallets/totem/accounting", default-features = false }
-
 [dev-dependencies]
 hex = "0.4.3"
 hex-literal = "0.3.1"
