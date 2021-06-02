@@ -24,6 +24,7 @@ hex-literal = "0.2.1"
 # Parachain runtimes
 rococo-parachain-runtime = { package = "cumulus-rococo-parachain-runtime", path = "rococo-runtime" }
 shell-runtime = { package = "cumulus-shell-runtime", path = "shell-runtime" }
+totem-runtime = { package = "cumulus-totem-runtime", path = "totem-runtime" }
 
 # Substrate dependencies
 sp-runtime = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
@@ -74,6 +75,19 @@ polkadot-primitives = { git = "https://github.com/paritytech/polkadot", branch =
 polkadot-service = { git = "https://github.com/paritytech/polkadot", branch = "master" }
 polkadot-cli = { git = "https://github.com/paritytech/polkadot", branch = "master" }
 polkadot-parachain = { git = "https://github.com/paritytech/polkadot", branch = "master" }
+
+# Totem dependencies
+totem-common = {git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-accounting = {git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-archive = {git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-balances-totem = {git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-bonsai = {git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-funding = {git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-orders = {git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-prefunding = {git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-teams = {git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-timekeeping = {git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-transfer = {git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
 
 [build-dependencies]
 substrate-build-script-utils = { git = "https://github.com/paritytech/substrate", branch = "master" }

@@ -20,19 +20,17 @@ members = [
 	"polkadot-parachains/pallets/ping",
 	"polkadot-parachains/rococo-runtime",
 	"polkadot-parachains/shell-runtime",
+	"polkadot-parachains/totem-runtime",
 	"test/runtime",
 	"test/runtime-upgrade",
 	"test/client",
 	"test/service",
 	"test/relay-sproof-builder",
 	"test/relay-validation-worker-provider",
-	# Totem
-	# "polkadot-parachains/pallets/totem/bonsai",
-	# "polkadot-parachains/pallets/totem/common",
 ]
 
 [profile.release]
 panic = "unwind"
 
-# [patch.'https://github.com/paritytech/polkadot']
-# pallet-balances = { path = "./polkadot-parachains/pallets/totem/balances", default-features = false }
+# [patch.'https://github.com/paritytech/substrate.git']
+# pallet-balances = {default-features = false, git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}

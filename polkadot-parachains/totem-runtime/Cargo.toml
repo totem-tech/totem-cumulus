@@ -1,0 +1,104 @@
+[package]
+name = 'cumulus-totem-runtime'
+version = '0.1.0'
+authors = ["Totem Accounting <support@totemaccounting.com>"]
+edition = '2018'
+
+[dependencies]
+serde = { version = "1.0.101", optional = true, features = ["derive"] }
+codec = { package = "parity-scale-codec", version = "2.0.0", default-features = false, features = ["derive"] }
+log = { version = "0.4.14", default-features = false }
+parachain-info = { path = "../pallets/parachain-info", default-features = false }
+
+# Substrate dependencies
+sp-std = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+sp-api = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+sp-io = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+sp-version = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+sp-runtime = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+sp-core = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+sp-session = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+sp-offchain = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+sp-block-builder = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+sp-transaction-pool = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+sp-inherents = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+
+frame-support = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+frame-executive = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+frame-system = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+
+# Cumulus dependencies
+cumulus-pallet-parachain-system = { path = "../../pallets/parachain-system", default-features = false }
+cumulus-primitives-core = { path = "../../primitives/core", default-features = false }
+cumulus-primitives-utility = { path = "../../primitives/utility", default-features = false }
+cumulus-pallet-dmp-queue = { path = "../../pallets/dmp-queue", default-features = false }
+cumulus-pallet-xcm = { path = "../../pallets/xcm", default-features = false }
+
+# Polkadot dependencies
+polkadot-parachain = { git = "https://github.com/paritytech/polkadot", default-features = false, branch = "master" }
+xcm = { git = "https://github.com/paritytech/polkadot", default-features = false, branch = "master" }
+xcm-builder = { git = "https://github.com/paritytech/polkadot", default-features = false, branch = "master" }
+xcm-executor = { git = "https://github.com/paritytech/polkadot", default-features = false, branch = "master" }
+
+# Totem dependencies
+totem-common = {default-features = false, git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-accounting = {default-features = false, git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-archive = {default-features = false, git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-balances-totem = {default-features = false, git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-bonsai = {default-features = false, git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-funding = {default-features = false, git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-orders = {default-features = false, git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-prefunding = {default-features = false, git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-teams = {default-features = false, git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-timekeeping = {default-features = false, git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+pallet-transfer = {default-features = false, git = 'https://gitlab.com/totem-tech/totem-mainnet-pallets', branch = 'test-balances-rename'}
+
+[dev-dependencies]
+hex = "0.4.3"
+hex-literal = "0.3.1"
+
+[build-dependencies]
+substrate-wasm-builder = { git = "https://github.com/paritytech/substrate", branch = "master" }
+
+[features]
+default = [ "std" ]
+std = [
+	"codec/std",
+	"serde",
+	"log/std",
+	"sp-api/std",
+	"sp-std/std",
+	"sp-io/std",
+	"sp-core/std",
+	"sp-runtime/std",
+	"sp-version/std",
+	"sp-offchain/std",
+	"sp-session/std",
+	"sp-block-builder/std",
+	"sp-transaction-pool/std",
+	"sp-inherents/std",
+	"frame-support/std",
+	"frame-executive/std",
+	"frame-system/std",
+	"parachain-info/std",
+	"cumulus-pallet-parachain-system/std",
+	"cumulus-pallet-dmp-queue/std",
+	"cumulus-pallet-xcm/std",
+	"cumulus-primitives-core/std",
+	"cumulus-primitives-utility/std",
+	"xcm/std",
+	"xcm-builder/std",
+	"xcm-executor/std",
+	# Totem
+	'totem-common/std',
+	'pallet-accounting/std',
+	'pallet-archive/std',
+	'pallet-balances-totem/std',
+	'pallet-bonsai/std',
+	'pallet-funding/std',
+	'pallet-orders/std',
+	'pallet-prefunding/std',
+	'pallet-teams/std',
+	'pallet-timekeeping/std',
+	'pallet-transfer/std',
+]
