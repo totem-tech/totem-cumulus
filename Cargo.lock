@@ -2065,6 +2065,7 @@ dependencies = [
  "pallet-prefunding",
  "pallet-teams",
  "pallet-timekeeping",
+ "pallet-timestamp",
  "pallet-transfer",
  "parachain-info",
  "parity-scale-codec",

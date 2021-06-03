@@ -37,6 +37,22 @@ impl pallet_prefunding::Config for Runtime {
     type PrefundingConverter = Converter;
 }
 
+pub const MILLISECS_PER_BLOCK: u64 = 1000;
+
+pub const SLOT_DURATION: u64 = MILLISECS_PER_BLOCK;
+
+parameter_types! {
+	pub const MinimumPeriod: u64 = SLOT_DURATION / 2;
+}
+
+impl pallet_timestamp::Config for Runtime {
+	/// A timestamp: milliseconds since the unix epoch.
+	type Moment = u64;
+	type OnTimestampSet = ();
+	type MinimumPeriod = MinimumPeriod;
+	type WeightInfo = ();
+}
+
 impl pallet_teams::Config for Runtime {
     type Event = Event;
 }

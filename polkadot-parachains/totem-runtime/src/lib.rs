@@ -146,7 +146,7 @@ impl frame_system::Config for Runtime {
 	type Version = Version;
 	/// Converts a module to an index of this module in the runtime.
 	type PalletInfo = PalletInfo;
-	type AccountData = ();
+	type AccountData = pallet_balances_totem::AccountData<Balance>;
 	type OnNewAccount = ();
 	type OnKilledAccount = ();
 	type DbWeight = ();
